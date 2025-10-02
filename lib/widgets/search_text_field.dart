@@ -1,11 +1,9 @@
-// lib/widgets/search_text_field.dart
 import 'package:flutter/material.dart';
 
 class SearchTextField extends StatelessWidget {
   final Function(String) onChanged;
   final VoidCallback onClose;
 
-  // ▼▼▼ UBAH BARIS DI BAWAH INI ▼▼▼
   const SearchTextField({
     super.key,
     required this.onChanged,
@@ -17,7 +15,7 @@ class SearchTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: SizedBox(
-        width: 200, // Lebar bisa disesuaikan jika perlu
+        width: 200,
         child: TextField(
           autofocus: true,
           onChanged: onChanged,
@@ -31,7 +29,7 @@ class SearchTextField extends StatelessWidget {
           ),
           style: const TextStyle(
             color: Colors.black87,
-          ), // Tambahkan style agar teks terlihat di tema terang
+          ),
         ),
       ),
     );

@@ -1,14 +1,13 @@
-// lib/screens/home_page.dart
 import 'package:flutter/material.dart';
 import '../models/character_model.dart';
 import '../widgets/empty_state.dart';
 import '../widgets/favorites_sheet.dart';
-import '../widgets/search_text_field.dart'; // Import ini akan terpakai lagi
+import '../widgets/search_text_field.dart';
 import '../widgets/carousel_view.dart' as my_widgets;
 import '../utils/responsive.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -33,7 +32,6 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  // Fungsi ini akan terpakai lagi
   void _showFavorites() {
     showModalBottomSheet(
       context: context,
@@ -50,7 +48,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white.withOpacity(0.8),
+        backgroundColor: Colors.white.withAlpha(204),
         surfaceTintColor: Colors.transparent,
         title: const Text(
           'Kimetsu no Yaiba',
@@ -125,7 +123,10 @@ class _HomePageState extends State<HomePage> {
           Positioned.fill(
             child: Opacity(
               opacity: 1.0,
-              child: Image.asset('assets/bg.png', fit: BoxFit.cover),
+              child: Image.asset(
+                'assets/bg.png',
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SafeArea(
@@ -143,7 +144,9 @@ class _HomePageState extends State<HomePage> {
                         Text(
                           '鬼滅の刃',
                           textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.displaySmall
+                          style: Theme.of(context)
+                              .textTheme
+                              .displaySmall
                               ?.copyWith(
                                 fontFamily: 'MochiyPop',
                                 fontWeight: FontWeight.bold,

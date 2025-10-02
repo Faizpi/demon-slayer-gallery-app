@@ -1,4 +1,3 @@
-// lib/widgets/carousel_card.dart
 import 'package:flutter/material.dart';
 import '../models/character_model.dart';
 import '../utils/image_builder.dart';

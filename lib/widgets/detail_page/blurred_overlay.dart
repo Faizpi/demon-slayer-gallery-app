@@ -1,4 +1,3 @@
-// lib/widgets/detail_page/blurred_overlay.dart
 import 'dart:ui';
 import 'package:flutter/material.dart';
 

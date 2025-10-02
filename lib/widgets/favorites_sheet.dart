@@ -1,9 +1,7 @@
-// lib/widgets/favorites_sheet.dart
 import 'package:flutter/material.dart';
 import '../models/character_model.dart';
 import '../utils/image_builder.dart';
 
-// 1. Ubah menjadi StatefulWidget
 class FavoritesSheet extends StatefulWidget {
   final Set<String> favorites;
   final Function(String) onToggleFavorite;
@@ -19,17 +17,14 @@ class FavoritesSheet extends StatefulWidget {
 }
 
 class _FavoritesSheetState extends State<FavoritesSheet> {
-  // 2. Buat state lokal untuk mengelola daftar favorit yang ditampilkan
   late List<Character> _favoriteCharacters;
 
   @override
   void initState() {
     super.initState();
-    // Inisialisasi daftar favorit saat sheet pertama kali dibuat
     _updateFavoritesList();
   }
 
-  // Helper untuk memfilter daftar karakter
   void _updateFavoritesList() {
     _favoriteCharacters = demoCharacters
         .where((c) => widget.favorites.contains(c.id))
@@ -75,7 +70,6 @@ class _FavoritesSheetState extends State<FavoritesSheet> {
               ),
             ),
             Expanded(
-              // 3. Tampilkan pesan jika daftar kosong, atau tampilkan list jika ada isinya
               child: _favoriteCharacters.isEmpty
                   ? const Center(
                       child: Text(
@@ -104,13 +98,10 @@ class _FavoritesSheetState extends State<FavoritesSheet> {
                                 color: Colors.red,
                               ),
                               onPressed: () {
-                                // 4. Panggil fungsi utama untuk update state di HomePage
                                 widget.onToggleFavorite(character.id);
-                                // 5. Update state lokal di dalam sheet agar UI langsung berubah
                                 setState(() {
                                   _updateFavoritesList();
                                 });
-                                // 6. Logika untuk menutup sheet secara otomatis DIHAPUS
                               },
                             ),
                           ),

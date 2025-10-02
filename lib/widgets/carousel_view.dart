@@ -1,4 +1,3 @@
-// lib/widgets/carousel_view.dart
 import 'package:flutter/material.dart';
 import '../models/character_model.dart';
 import '../screens/detail_page.dart';
@@ -8,14 +7,12 @@ import 'carousel_card.dart';
 class CarouselView extends StatefulWidget {
   final List<Character> characters;
   final Set<String> favorites;
-  // ▼▼▼ PERBAIKI NAMA DI SINI ▼▼▼
   final Function(String) onToggleFavorite;
 
   const CarouselView({
     super.key,
     required this.characters,
     required this.favorites,
-    // ▼▼▼ DAN DI SINI ▼▼▼
     required this.onToggleFavorite,
   });
 
@@ -30,7 +27,6 @@ class _CarouselViewState extends State<CarouselView> {
   @override
   void initState() {
     super.initState();
-    // initState() sengaja dikosongkan.
   }
 
   @override

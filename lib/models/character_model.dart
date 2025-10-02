@@ -1,4 +1,3 @@
-// lib/models/character_model.dart
 class Character {
   final String id, name, role, description, imageUrl;
   Character({

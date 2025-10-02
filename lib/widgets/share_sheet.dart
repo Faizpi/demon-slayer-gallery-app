@@ -1,4 +1,3 @@
-// lib/widgets/share_sheet.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -10,11 +9,14 @@ class ShareSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final shareOptions = [
-      {'name': 'WhatsApp', 'icon': Icons.chat, 'color': Colors.green},
+      {'name': 'WhatsApp', 'icon': Icons.chat_bubble, 'color': Colors.green},
+      {'name': 'Telegram', 'icon': Icons.telegram, 'color': Colors.lightBlue},
       {'name': 'Instagram', 'icon': Icons.camera_alt, 'color': Colors.purple},
       {'name': 'TikTok', 'icon': Icons.music_note, 'color': Colors.black},
       {'name': 'Twitter', 'icon': Icons.alternate_email, 'color': Colors.blue},
       {'name': 'Facebook', 'icon': Icons.facebook, 'color': Colors.blue[900]},
+      {'name': 'Pinterest', 'icon': Icons.push_pin, 'color': Colors.red},
+      {'name': 'Email', 'icon': Icons.email, 'color': Colors.orange[800]},
     ];
 
     return Container(
@@ -22,7 +24,6 @@ class ShareSheet extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
-      // ▼▼▼ BUNGKUS DENGAN SingleChildScrollView ▼▼▼
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -49,9 +50,8 @@ class ShareSheet extends StatelessWidget {
                 0,
                 16,
                 24,
-              ), // Tambah padding bawah
+              ),
               child: Wrap(
-                // Gunakan Wrap agar lebih fleksibel di layar kecil
                 spacing: 16,
                 runSpacing: 16,
                 alignment: WrapAlignment.center,

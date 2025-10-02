@@ -1,4 +1,3 @@
-// lib/widgets/detail_page/hero_background.dart
 import 'package:flutter/material.dart';
 import '../../utils/image_builder.dart';
 

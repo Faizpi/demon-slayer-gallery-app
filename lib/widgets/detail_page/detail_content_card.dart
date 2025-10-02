@@ -1,4 +1,3 @@
-// lib/widgets/detail_page/detail_content_card.dart
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../models/character_model.dart';
@@ -52,7 +51,6 @@ class DetailContentCard extends StatelessWidget {
   }
 }
 
-// ... (Sub-widget lain tidak berubah)
 class _CharacterName extends StatelessWidget {
   final String name;
   const _CharacterName({required this.name});

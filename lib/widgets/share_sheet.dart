@@ -45,12 +45,7 @@ class ShareSheet extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(
-                16,
-                0,
-                16,
-                24,
-              ),
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
               child: Wrap(
                 spacing: 16,
                 runSpacing: 16,

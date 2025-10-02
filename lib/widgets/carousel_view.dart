@@ -108,8 +108,9 @@ class _CarouselViewState extends State<CarouselView> {
                   ? index % widget.characters.length
                   : index;
 
-              if (actualIndex >= widget.characters.length)
+              if (actualIndex >= widget.characters.length) {
                 return const SizedBox.shrink();
+              }
 
               final character = widget.characters[actualIndex];
               final isFavorite = widget.favorites.contains(character.id);

@@ -7,7 +7,7 @@ import '../widgets/carousel_view.dart' as my_widgets;
 import '../utils/responsive.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -123,10 +123,7 @@ class _HomePageState extends State<HomePage> {
           Positioned.fill(
             child: Opacity(
               opacity: 1.0,
-              child: Image.asset(
-                'assets/bg.png',
-                fit: BoxFit.cover,
-              ),
+              child: Image.asset('assets/bg.png', fit: BoxFit.cover),
             ),
           ),
           SafeArea(
@@ -144,9 +141,7 @@ class _HomePageState extends State<HomePage> {
                         Text(
                           '鬼滅の刃',
                           textAlign: TextAlign.center,
-                          style: Theme.of(context)
-                              .textTheme
-                              .displaySmall
+                          style: Theme.of(context).textTheme.displaySmall
                               ?.copyWith(
                                 fontFamily: 'MochiyPop',
                                 fontWeight: FontWeight.bold,

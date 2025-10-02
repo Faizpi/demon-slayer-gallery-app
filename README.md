@@ -4,11 +4,7 @@ Aplikasi galeri yang indah dan responsif, dibangun menggunakan Flutter, untuk me
 
 ## 📸 Screenshots
 
-
-*Tampilan di Perangkat Mobile*
-
-
-*Tampilan Responsif di Layar Lebar*
+![mockup](kny.jpg)
 
 ## ✨ Fitur Utama
 

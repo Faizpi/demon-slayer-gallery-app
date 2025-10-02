@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import '../models/character_model.dart';
 import '../screens/detail_page.dart';
-import '../utils/responsive.dart'; 
+import '../utils/responsive.dart';
 import 'carousel_card.dart';
 
 class CarouselView extends StatefulWidget {
@@ -12,19 +12,19 @@ class CarouselView extends StatefulWidget {
   final Function(String) onToggleFavorite;
 
   const CarouselView({
-    Key? key,
+    super.key,
     required this.characters,
     required this.favorites,
     // ▼▼▼ DAN DI SINI ▼▼▼
     required this.onToggleFavorite,
-  }) : super(key: key);
+  });
 
   @override
   State<CarouselView> createState() => _CarouselViewState();
 }
 
 class _CarouselViewState extends State<CarouselView> {
-  PageController? _pageController; 
+  PageController? _pageController;
   int _actualCurrentIndex = 0;
 
   @override
@@ -32,7 +32,7 @@ class _CarouselViewState extends State<CarouselView> {
     super.initState();
     // initState() sengaja dikosongkan.
   }
-  
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -40,7 +40,7 @@ class _CarouselViewState extends State<CarouselView> {
       _initializeController();
     }
   }
-  
+
   @override
   void didUpdateWidget(covariant CarouselView oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -60,15 +60,16 @@ class _CarouselViewState extends State<CarouselView> {
     } else {
       viewFraction = 0.8;
     }
-    
+
     int initialPage = 0;
     if (widget.characters.length > 3) {
       const int simulatedBaseIndex = 10000;
-      initialPage = simulatedBaseIndex - (simulatedBaseIndex % widget.characters.length);
+      initialPage =
+          simulatedBaseIndex - (simulatedBaseIndex % widget.characters.length);
     }
 
     setState(() {
-      _pageController?.dispose(); 
+      _pageController?.dispose();
       _pageController = PageController(
         viewportFraction: viewFraction,
         initialPage: initialPage,
@@ -88,7 +89,7 @@ class _CarouselViewState extends State<CarouselView> {
     if (_pageController == null || widget.characters.isEmpty) {
       return const Center(child: CircularProgressIndicator());
     }
-    
+
     final bool useInfinityScroll = widget.characters.length > 3;
 
     return Column(
@@ -98,20 +99,21 @@ class _CarouselViewState extends State<CarouselView> {
           child: PageView.builder(
             key: ValueKey(widget.characters.length),
             controller: _pageController,
-            itemCount: useInfinityScroll ? null : widget.characters.length, 
+            itemCount: useInfinityScroll ? null : widget.characters.length,
             onPageChanged: (index) {
               setState(() {
-                _actualCurrentIndex = useInfinityScroll 
-                    ? index % widget.characters.length 
+                _actualCurrentIndex = useInfinityScroll
+                    ? index % widget.characters.length
                     : index;
               });
             },
             itemBuilder: (context, index) {
-              final actualIndex = useInfinityScroll 
-                  ? index % widget.characters.length 
+              final actualIndex = useInfinityScroll
+                  ? index % widget.characters.length
                   : index;
 
-              if (actualIndex >= widget.characters.length) return const SizedBox.shrink();
+              if (actualIndex >= widget.characters.length)
+                return const SizedBox.shrink();
 
               final character = widget.characters[actualIndex];
               final isFavorite = widget.favorites.contains(character.id);
@@ -125,7 +127,8 @@ class _CarouselViewState extends State<CarouselView> {
                     character: character,
                     isFavorite: isFavorite,
                     // Pastikan di sini juga konsisten
-                    onFavoriteToggle: () => widget.onToggleFavorite(character.id),
+                    onFavoriteToggle: () =>
+                        widget.onToggleFavorite(character.id),
                     onTap: () => Navigator.push(
                       context,
                       PageRouteBuilder(
@@ -133,7 +136,8 @@ class _CarouselViewState extends State<CarouselView> {
                         pageBuilder: (_, __, ___) => DetailPage(
                           character: character,
                           isFavorite: isFavorite,
-                          onFavoriteToggle: () => widget.onToggleFavorite(character.id),
+                          onFavoriteToggle: () =>
+                              widget.onToggleFavorite(character.id),
                         ),
                       ),
                     ),
@@ -162,7 +166,7 @@ class _CarouselViewState extends State<CarouselView> {
             ),
           ),
         ),
-         const SizedBox(height: 24),
+        const SizedBox(height: 24),
       ],
     );
   }

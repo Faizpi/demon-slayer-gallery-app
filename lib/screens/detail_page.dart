@@ -91,21 +91,22 @@ class DetailPage extends StatelessWidget {
                   Text(
                     character.name,
                     style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 12),
                   Chip(
                     label: Text(character.role),
-                    backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+                    backgroundColor: Theme.of(
+                      context,
+                    ).colorScheme.secondaryContainer,
                   ),
                   const SizedBox(height: 24),
                   Text(
                     character.description,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge
-                        ?.copyWith(height: 1.6, fontSize: 16),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodyLarge?.copyWith(height: 1.6, fontSize: 16),
                   ),
                 ],
               ),
@@ -117,8 +118,13 @@ class DetailPage extends StatelessWidget {
   }
 
   /// Helper untuk membangun tombol di AppBar agar tidak duplikat kode
-  List<Widget> _buildAppBarActions(BuildContext context, {required bool isMobile}) {
-    final iconColor = isMobile ? Colors.white : Theme.of(context).colorScheme.onSurface;
+  List<Widget> _buildAppBarActions(
+    BuildContext context, {
+    required bool isMobile,
+  }) {
+    final iconColor = isMobile
+        ? Colors.white
+        : Theme.of(context).colorScheme.onSurface;
 
     return [
       // IconButton(

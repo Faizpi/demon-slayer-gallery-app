@@ -4,11 +4,11 @@ import '../models/character_model.dart';
 import '../widgets/empty_state.dart';
 import '../widgets/favorites_sheet.dart';
 import '../widgets/search_text_field.dart'; // Import ini akan terpakai lagi
-import '../widgets/carousel_view.dart' as my_widgets; 
+import '../widgets/carousel_view.dart' as my_widgets;
 import '../utils/responsive.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   List<Character> get filtered => demoCharacters
       .where((c) => c.name.toLowerCase().contains(_query.toLowerCase()))
       .toList();
-  
+
   void _toggleFavorite(String id) {
     setState(() {
       if (_favorites.contains(id)) {
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white.withOpacity(0.8),
         surfaceTintColor: Colors.transparent,
@@ -59,13 +59,13 @@ class _HomePageState extends State<HomePage> {
             color: Colors.black87,
             fontSize: 22,
           ),
-        ),   
+        ),
         actions: [
           AnimatedSwitcher(
             duration: const Duration(milliseconds: 300),
             child: _favorites.isNotEmpty
                 ? IconButton(
-                    key: const ValueKey('fav_icon_button'), 
+                    key: const ValueKey('fav_icon_button'),
                     icon: Stack(
                       clipBehavior: Clip.none,
                       children: [
@@ -125,38 +125,36 @@ class _HomePageState extends State<HomePage> {
           Positioned.fill(
             child: Opacity(
               opacity: 1.0,
-              child: Image.asset(
-                'assets/bg.png',
-                fit: BoxFit.cover,
-              ),
+              child: Image.asset('assets/bg.png', fit: BoxFit.cover),
             ),
           ),
           SafeArea(
             child: Column(
               children: [
-                  Center(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: isMobile(context) ? 20.0 : 40.0,
-                        vertical: 20.0,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            '鬼滅の刃',
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                                  fontFamily: 'MochiyPop',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 40,
-                                  color: Colors.black87,
-                                ),
-                          ),
-                        ],
-                      ),
+                Center(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: isMobile(context) ? 20.0 : 40.0,
+                      vertical: 20.0,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          '鬼滅の刃',
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.displaySmall
+                              ?.copyWith(
+                                fontFamily: 'MochiyPop',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 40,
+                                color: Colors.black87,
+                              ),
+                        ),
+                      ],
                     ),
                   ),
+                ),
                 Expanded(
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 300),

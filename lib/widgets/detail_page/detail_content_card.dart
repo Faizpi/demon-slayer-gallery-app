@@ -58,9 +58,14 @@ class _CharacterName extends StatelessWidget {
   const _CharacterName({required this.name});
   @override
   Widget build(BuildContext context) {
-    return Text(name,
-        style: const TextStyle(
-            fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white));
+    return Text(
+      name,
+      style: const TextStyle(
+        fontSize: 28,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
+    );
   }
 }
 
@@ -70,15 +75,20 @@ class _RoleBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-        decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.2),
-            borderRadius: BorderRadius.circular(20)),
-        child: Text(role,
-            style: const TextStyle(
-                fontSize: 14,
-                color: Colors.white,
-                fontWeight: FontWeight.w500)));
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.2),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        role,
+        style: const TextStyle(
+          fontSize: 14,
+          color: Colors.white,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    );
   }
 }
 
@@ -87,12 +97,12 @@ class _CharacterDescription extends StatelessWidget {
   const _CharacterDescription({required this.description});
   @override
   Widget build(BuildContext context) {
-    return Text(description,
-        style:
-            const TextStyle(color: Colors.white, fontSize: 15, height: 1.5));
+    return Text(
+      description,
+      style: const TextStyle(color: Colors.white, fontSize: 15, height: 1.5),
+    );
   }
 }
-
 
 class _InfoChipRow extends StatelessWidget {
   final Character character;
@@ -107,9 +117,12 @@ class _InfoChipRow extends StatelessWidget {
     } else if (character.id.startsWith('d')) {
       chips.add(const _InfoChip(icon: Icons.flare, label: 'Demon'));
     }
-    
-    if (character.role.contains('Pillar') || character.role.contains('Hashira')) {
-      chips.add(const _InfoChip(icon: Icons.military_tech, label: 'Hashira Rank'));
+
+    if (character.role.contains('Pillar') ||
+        character.role.contains('Hashira')) {
+      chips.add(
+        const _InfoChip(icon: Icons.military_tech, label: 'Hashira Rank'),
+      );
     } else if (character.role.contains('Upper Rank')) {
       chips.add(const _InfoChip(icon: Icons.star, label: 'Upper Rank'));
     }
@@ -117,7 +130,9 @@ class _InfoChipRow extends StatelessWidget {
     // ▼▼▼ LOGIKA BARU: Khusus untuk Muzan ▼▼▼
     // ID 'mzn' adalah ID untuk Muzan Kibutsuji
     if (character.id == 'mzn') {
-      chips.add(const _InfoChip(icon: Icons.workspace_premium, label: 'Demon King'));
+      chips.add(
+        const _InfoChip(icon: Icons.workspace_premium, label: 'Demon King'),
+      );
     }
 
     return Wrap(spacing: 8, runSpacing: 8, children: chips);
@@ -131,20 +146,27 @@ class _InfoChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.15),
-            borderRadius: BorderRadius.circular(20),
-            border:
-                Border.all(color: Colors.white.withOpacity(0.3), width: 1)),
-        child: Row(mainAxisSize: MainAxisSize.min, children: [
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.15),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.white.withOpacity(0.3), width: 1),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
           Icon(icon, size: 16, color: Colors.white),
           const SizedBox(width: 6),
-          Text(label,
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500))
-        ]));
+          Text(
+            label,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

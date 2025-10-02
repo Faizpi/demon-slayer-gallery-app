@@ -10,6 +10,7 @@ class CarouselCard extends StatelessWidget {
   final VoidCallback onTap;
 
   const CarouselCard({
+    super.key,
     required this.character,
     required this.isFavorite,
     required this.onFavoriteToggle,
@@ -64,10 +65,8 @@ class CarouselCard extends StatelessWidget {
                       ),
                       child: AnimatedSwitcher(
                         duration: const Duration(milliseconds: 300),
-                        transitionBuilder: (child, anim) => ScaleTransition(
-                          scale: anim,
-                          child: child,
-                        ),
+                        transitionBuilder: (child, anim) =>
+                            ScaleTransition(scale: anim, child: child),
                         child: Icon(
                           isFavorite ? Icons.favorite : Icons.favorite_border,
                           key: ValueKey(isFavorite),

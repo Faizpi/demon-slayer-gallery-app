@@ -5,6 +5,8 @@ import 'screens/home_page.dart';
 void main() => runApp(DemonSlayerApp());
 
 class DemonSlayerApp extends StatelessWidget {
+  const DemonSlayerApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

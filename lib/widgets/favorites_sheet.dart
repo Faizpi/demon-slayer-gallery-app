@@ -9,10 +9,10 @@ class FavoritesSheet extends StatefulWidget {
   final Function(String) onToggleFavorite;
 
   const FavoritesSheet({
-    Key? key,
+    super.key,
     required this.favorites,
     required this.onToggleFavorite,
-  }) : super(key: key);
+  });
 
   @override
   State<FavoritesSheet> createState() => _FavoritesSheetState();
@@ -94,9 +94,7 @@ class _FavoritesSheetState extends State<FavoritesSheet> {
                           child: ListTile(
                             leading: ClipRRect(
                               borderRadius: BorderRadius.circular(8),
-                              child: buildCharacterImage(
-                                character.imageUrl,
-                              ),
+                              child: buildCharacterImage(character.imageUrl),
                             ),
                             title: Text(character.name),
                             subtitle: Text(character.role),

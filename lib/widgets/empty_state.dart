@@ -5,7 +5,7 @@ class EmptyState extends StatelessWidget {
   final String query;
 
   // ▼▼▼ UBAH BARIS DI BAWAH INI ▼▼▼
-  const EmptyState({Key? key, required this.query}) : super(key: key);
+  const EmptyState({super.key, required this.query});
 
   @override
   Widget build(BuildContext context) {

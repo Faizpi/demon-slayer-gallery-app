@@ -7,10 +7,10 @@ class SearchTextField extends StatelessWidget {
 
   // ▼▼▼ UBAH BARIS DI BAWAH INI ▼▼▼
   const SearchTextField({
-    Key? key,
+    super.key,
     required this.onChanged,
     required this.onClose,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,9 @@ class SearchTextField extends StatelessWidget {
               onPressed: onClose,
             ),
           ),
-          style: const TextStyle(color: Colors.black87), // Tambahkan style agar teks terlihat di tema terang
+          style: const TextStyle(
+            color: Colors.black87,
+          ), // Tambahkan style agar teks terlihat di tema terang
         ),
       ),
     );

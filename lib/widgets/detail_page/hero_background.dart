@@ -6,15 +6,17 @@ class HeroBackground extends StatelessWidget {
   final String imageUrl;
   final String heroTag;
 
-  const HeroBackground({required this.imageUrl, required this.heroTag});
+  const HeroBackground({
+    super.key,
+    required this.imageUrl,
+    required this.heroTag,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Hero(
       tag: heroTag,
-      child: SizedBox.expand(
-        child: buildCharacterImage(imageUrl),
-      ),
+      child: SizedBox.expand(child: buildCharacterImage(imageUrl)),
     );
   }
 }

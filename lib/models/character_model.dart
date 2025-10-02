@@ -65,7 +65,7 @@ final demoCharacters = [
     role: 'Demon Slayer — Flower Breathing User',
     description:
         'Tsuguko (penerus) dari Shinobu Kocho. Awalnya sangat pendiam dan tidak bisa mengambil keputusan, namun memiliki bakat luar biasa dan penglihatan super yang ia gunakan dalam pertempuran.',
-    imageUrl: 'assets/kno.png', 
+    imageUrl: 'assets/kno.png',
   ),
   Character(
     id: 't8',
@@ -83,7 +83,7 @@ final demoCharacters = [
         'Mantan shinobi yang sangat eksentrik dan "flamboyan". Hashira Suara ini bertarung dengan dua pedang besar, menganalisis serangan musuh sebagai "partitur musik" untuk menemukan celah.',
     imageUrl: 'assets/tgn.png',
   ),
-    Character(
+  Character(
     id: 't10',
     name: 'Muichiro Tokito',
     role: 'Hashira — Mist Pillar',

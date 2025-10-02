@@ -25,7 +25,7 @@ final demoCharacters = [
     role: 'Demon — The Chosen Demon',
     description:
         'Adik Tanjiro yang menjadi iblis namun menolak memakan manusia. Ia melindungi manusia dan menggunakan Blood Demon Art "Exploding Blood" yang dapat membakar racun iblis dan melukai iblis lain.',
-    imageUrl: 'assets/nzk.png',
+    imageUrl: 'assets/nzkk.png',
   ),
   Character(
     id: 't3',
